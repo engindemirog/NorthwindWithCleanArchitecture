@@ -24,7 +24,7 @@ namespace Core.Persistence.Repositories
         IQueryable<T> Query();
 
         Task<T> AddAsync(T entity);
-        Task UpdateAsync(T entity);
-        Task DeleteAsync(T entity);
+        Task<T> UpdateAsync(T entity);
+        Task<T> DeleteAsync(T entity);
     }
 }

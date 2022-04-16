@@ -55,16 +55,18 @@ namespace Core.Persistence.Repositories
             return entity;
         }
 
-        public async Task DeleteAsync(TEntity entity)
+        public async Task<TEntity> DeleteAsync(TEntity entity)
         {
             Context.Entry(entity).State = EntityState.Deleted;
             await Context.SaveChangesAsync();
+            return entity;
         }
 
-        public async Task UpdateAsync(TEntity entity)
+        public async Task<TEntity> UpdateAsync(TEntity entity)
         {
             Context.Entry(entity).State = EntityState.Modified;
             await Context.SaveChangesAsync();
+            return entity;
         }
     }
 }
