@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Core.Application\Core.Application.csproj" />
     <ProjectReference Include="..\..\corePackages\Core.Persistence\Core.Persistence.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
@@ -16,7 +17,6 @@
     <Folder Include="Features\Products\Commands\Update\" />
     <Folder Include="Features\Products\Validations\" />
     <Folder Include="Features\Products\Rules\" />
-    <Folder Include="Features\Products\Queries\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,5 +1,8 @@
 ﻿using Application.Features.Products.Commands.Create;
 using Application.Features.Products.Commands.Dtos;
+using Application.Features.Products.Models;
+using Application.Features.Products.Queries;
+using Core.Application.Requests;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -22,6 +25,14 @@ namespace WebApi.Controllers
         {
           CreatedProductDto createdProductDto =  await _mediator.Send(createProductCommand);
             return Created("",createdProductDto);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetList([FromQuery] PageRequest pageRequest)
+        {
+            GetProductListQuery getProductListQuery = new GetProductListQuery { PageRequest=pageRequest};
+            ProductListModel result = await _mediator.Send(getProductListQuery);
+            return Ok(result);
         }
     }
 }
