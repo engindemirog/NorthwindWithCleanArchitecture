@@ -1,4 +1,7 @@
-﻿using MediatR;
+﻿using Application.Features.Products.Rules;
+using Core.Application.Pipelines;
+using FluentValidation;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -15,8 +18,11 @@ namespace Application
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
-            
+            services.AddScoped<ProductBusinessRules>();
+
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
 
             return services;
         }

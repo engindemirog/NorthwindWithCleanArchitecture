@@ -15,9 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "src\northwin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "src\northwind\Application\Application.csproj", "{E55587BF-096E-494B-B24D-B702F1809150}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{3EB1C04F-67D5-4CF4-9BFB-2DB9BBD652B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csproj", "{3EB1C04F-67D5-4CF4-9BFB-2DB9BBD652B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Application", "Core.Application\Core.Application.csproj", "{38723F0E-A8E7-429F-A771-685F9E0A1A5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Application", "Core.Application\Core.Application.csproj", "{38723F0E-A8E7-429F-A771-685F9E0A1A5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.CrossCuttingConcerns", "Core.CrossCuttingConcerns\Core.CrossCuttingConcerns.csproj", "{64889A6F-E538-4CA0-817A-BE535AD738E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{38723F0E-A8E7-429F-A771-685F9E0A1A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38723F0E-A8E7-429F-A771-685F9E0A1A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38723F0E-A8E7-429F-A771-685F9E0A1A5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64889A6F-E538-4CA0-817A-BE535AD738E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64889A6F-E538-4CA0-817A-BE535AD738E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64889A6F-E538-4CA0-817A-BE535AD738E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64889A6F-E538-4CA0-817A-BE535AD738E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +66,7 @@ Global
 		{E55587BF-096E-494B-B24D-B702F1809150} = {3DA5A4D6-A245-449B-839B-D69498887108}
 		{3EB1C04F-67D5-4CF4-9BFB-2DB9BBD652B9} = {3DA5A4D6-A245-449B-839B-D69498887108}
 		{38723F0E-A8E7-429F-A771-685F9E0A1A5A} = {28BB9D53-186D-43AA-8471-0672CF3A6BB2}
+		{64889A6F-E538-4CA0-817A-BE535AD738E4} = {28BB9D53-186D-43AA-8471-0672CF3A6BB2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3F1FE7A8-2E41-4049-BBD1-4F81F3A22730}

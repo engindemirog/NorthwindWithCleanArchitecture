@@ -1,4 +1,5 @@
 ﻿using Application.Features.Products.Commands.Dtos;
+using Application.Features.Products.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
 using Domain.Entities;
@@ -24,15 +25,19 @@ namespace Application.Features.Products.Commands.Create
         {
             IProductRepository _productRepository;
             IMapper _mapper;
-            public CreateProductCommandHandler(IProductRepository productRepository,IMapper mapper)
+            ProductBusinessRules _productBusinessRules;
+            public CreateProductCommandHandler(IProductRepository productRepository,IMapper mapper, ProductBusinessRules productBusinessRules)
             {
                 _productRepository = productRepository;
                 _mapper = mapper;
+                _productBusinessRules = productBusinessRules;
             }
 
             public async Task<CreatedProductDto> Handle(CreateProductCommand request, CancellationToken cancellationToken)
             {
-                
+
+                await _productBusinessRules.ProductNameShouldNotBeExisted(request.ProductName);
+
                 Product product = _mapper.Map<Product>(request);
                 Product createdProduct =  await _productRepository.AddAsync(product);
                 CreatedProductDto createdProductDto = _mapper.Map<CreatedProductDto>(createdProduct);

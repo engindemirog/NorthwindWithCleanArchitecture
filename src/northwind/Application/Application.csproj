@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Core.Application\Core.Application.csproj" />
+    <ProjectReference Include="..\..\..\Core.CrossCuttingConcerns\Core.CrossCuttingConcerns.csproj" />
     <ProjectReference Include="..\..\corePackages\Core.Persistence\Core.Persistence.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
@@ -16,12 +17,13 @@
     <Folder Include="Features\Products\Commands\Delete\" />
     <Folder Include="Features\Products\Commands\Update\" />
     <Folder Include="Features\Products\Validations\" />
-    <Folder Include="Features\Products\Rules\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="11.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="FluentValidation" Version="10.4.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="10.4.0" />
     <PackageReference Include="MediatR" Version="10.0.1" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
   </ItemGroup>
