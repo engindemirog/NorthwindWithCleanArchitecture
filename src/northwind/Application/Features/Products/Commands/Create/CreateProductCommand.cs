@@ -2,6 +2,7 @@
 using Application.Features.Products.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
+using Core.Mailing;
 using Domain.Entities;
 using MediatR;
 using System;
@@ -26,11 +27,17 @@ namespace Application.Features.Products.Commands.Create
             IProductRepository _productRepository;
             IMapper _mapper;
             ProductBusinessRules _productBusinessRules;
-            public CreateProductCommandHandler(IProductRepository productRepository,IMapper mapper, ProductBusinessRules productBusinessRules)
+            IMailService _mailService;
+            public CreateProductCommandHandler(
+                IProductRepository productRepository,
+                IMapper mapper, 
+                ProductBusinessRules productBusinessRules,
+                IMailService mailService)
             {
                 _productRepository = productRepository;
                 _mapper = mapper;
                 _productBusinessRules = productBusinessRules;
+                _mailService = mailService;
             }
 
             public async Task<CreatedProductDto> Handle(CreateProductCommand request, CancellationToken cancellationToken)
@@ -41,6 +48,19 @@ namespace Application.Features.Products.Commands.Create
                 Product product = _mapper.Map<Product>(request);
                 Product createdProduct =  await _productRepository.AddAsync(product);
                 CreatedProductDto createdProductDto = _mapper.Map<CreatedProductDto>(createdProduct);
+
+                Mail mail = new Mail
+                {
+                    ToFullName="Adem Erbaş",
+                    ToEmail = "ademerdas@c.com",
+                    Subject ="Yeni ürün eklendi",
+                    HtmlBody = "Yeni ürün eklendi"
+
+                };
+
+                _mailService.SendMail(mail);
+
+
                 return createdProductDto;
             }
         }

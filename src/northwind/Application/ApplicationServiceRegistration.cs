@@ -1,5 +1,7 @@
 ﻿using Application.Features.Products.Rules;
 using Core.Application.Pipelines;
+using Core.Mailing;
+using Core.Mailing.MailKitImplementations;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,6 +25,8 @@ namespace Application
             services.AddScoped<ProductBusinessRules>();
 
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
+
+            services.AddSingleton<IMailService, MailkitMailService>();
 
             return services;
         }
