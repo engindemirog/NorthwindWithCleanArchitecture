@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Application", "Core.Ap
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.CrossCuttingConcerns", "Core.CrossCuttingConcerns\Core.CrossCuttingConcerns.csproj", "{64889A6F-E538-4CA0-817A-BE535AD738E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Mailing", "src\corePackages\Core.Mailing\Core.Mailing.csproj", "{367D821C-B0A6-43ED-9238-3E3BD604261D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Mailing", "src\corePackages\Core.Mailing\Core.Mailing.csproj", "{367D821C-B0A6-43ED-9238-3E3BD604261D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Security", "src\corePackages\Core.Packages\Core.Security.csproj", "{F7B61500-3A44-465E-B968-C93A6359A213}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,10 @@ Global
 		{367D821C-B0A6-43ED-9238-3E3BD604261D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{367D821C-B0A6-43ED-9238-3E3BD604261D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{367D821C-B0A6-43ED-9238-3E3BD604261D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7B61500-3A44-465E-B968-C93A6359A213}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7B61500-3A44-465E-B968-C93A6359A213}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7B61500-3A44-465E-B968-C93A6359A213}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7B61500-3A44-465E-B968-C93A6359A213}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +80,7 @@ Global
 		{38723F0E-A8E7-429F-A771-685F9E0A1A5A} = {28BB9D53-186D-43AA-8471-0672CF3A6BB2}
 		{64889A6F-E538-4CA0-817A-BE535AD738E4} = {28BB9D53-186D-43AA-8471-0672CF3A6BB2}
 		{367D821C-B0A6-43ED-9238-3E3BD604261D} = {28BB9D53-186D-43AA-8471-0672CF3A6BB2}
+		{F7B61500-3A44-465E-B968-C93A6359A213} = {28BB9D53-186D-43AA-8471-0672CF3A6BB2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3F1FE7A8-2E41-4049-BBD1-4F81F3A22730}
