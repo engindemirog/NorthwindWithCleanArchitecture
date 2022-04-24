@@ -20,7 +20,8 @@ namespace Persistence
                 (options => options.UseSqlServer(configuration.GetConnectionString("NorthwindConnectionString")));
 
             services.AddScoped<IProductRepository, ProductRepository>();
-
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserOperationClaimRepository, UserOperationClaimRepository>();
 
             return services;
         }
