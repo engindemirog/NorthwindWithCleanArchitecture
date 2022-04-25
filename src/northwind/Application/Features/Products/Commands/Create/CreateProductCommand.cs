@@ -2,6 +2,7 @@
 using Application.Features.Products.Rules;
 using Application.Services.Repositories;
 using AutoMapper;
+using Core.Application.Pipelines.Authorization;
 using Core.Mailing;
 using Domain.Entities;
 using MediatR;
@@ -13,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Products.Commands.Create
 {
-    public class CreateProductCommand:IRequest<CreatedProductDto>
+    public class CreateProductCommand:IRequest<CreatedProductDto>,ISecuredRequest
     {
         public int CategoryId { get; set; }
         public string ProductName { get; set; }
@@ -21,6 +22,7 @@ namespace Application.Features.Products.Commands.Create
         public short UnitsInStock { get; set; }
         public string QuantityPerUnit { get; set; }
 
+        public string[] Roles => new string[] { "product.add" };
 
         public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, CreatedProductDto>
         {
@@ -58,7 +60,7 @@ namespace Application.Features.Products.Commands.Create
 
                 };
 
-                _mailService.SendMail(mail);
+                //_mailService.SendMail(mail);
 
 
                 return createdProductDto;
